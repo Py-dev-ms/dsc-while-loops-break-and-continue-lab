@@ -50,11 +50,25 @@ hungry_patrons = []
 # then remove the even numbered patrons from the line_of_hungry_patrons
 # each list should contain 15 elements
 
-while patron < len(line_of_hungry_patrons):
-    if line_of_hungry_patrons[patron] % 2 == 0:
+# for patron in line_of_hungry_patrons:
+#     if patron % 2 == 0:
+#         fed_patrons.append(patron)
+#         line_of_hungry_patrons.remove(patron)
+
+
+index = 0
+
+while index < len(line_of_hungry_patrons):
+    patron = line_of_hungry_patrons[index]
+    
+    if patron % 2 == 0:
+        fed_patrons.append(patron)
         line_of_hungry_patrons.remove(patron)
+    else:
+        index += 1
 
-    patron += 1
+hungry_patrons = line_of_hungry_patrons
+print("Fed Patrons:", fed_patrons)
+print("Hungry Patrons:", hungry_patrons)
 
-print(line_of_hungry_patrons)
 
